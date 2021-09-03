@@ -14,6 +14,10 @@ public class UASortAndMerge {
 	//equivalent to "Integer.MAX_VALUE" (I looked it up and couldn't find an answer).
 	final static String MERGE_FLAG = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
 	public static void main(String[] args) throws FileNotFoundException {
+		if(args.length < 3) {
+			System.out.println("Invalid argument count, expected 3. Exiting.");
+			return;
+		}
 		String _input_file_path = args[0];
 		String _output_file_path = args[1];
 		int max_depth = Integer.parseInt(args[2]);
@@ -40,7 +44,7 @@ public class UASortAndMerge {
 			}
 			
 		} else {
-			System.out.println("File at that path does not exist.  Try using quotations around your paths.\n"
+			System.out.println("File at that path does not exist. Try using quotations around your paths.\n"
 					+ "Path provided: " + _input_file_path);
 		}
 	}
@@ -55,7 +59,7 @@ public class UASortAndMerge {
 			if(_start == _end) _end++;
 			InsertionSort(_array, _start, _end);
 		} else {
-			int _mid = GetMidpoint(_end-_start)+_start;
+			int _mid = GetMidpoint(_end-_start) + _start;
 			
 			MergeSort(_array, _start, _mid, _depth-1);
 			MergeSort(_array, _mid, _end, _depth-1);
