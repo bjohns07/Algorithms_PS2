@@ -1,3 +1,10 @@
+/* ********************************************************
+* Student Name: Brennan Johnston
+* Class: CS 3103 Algorithms
+* Assignment: Problem Set 2
+* Due Date: September 7th, 2021
+* ********************************************************/
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -31,7 +38,6 @@ public class UASortAndMerge {
 				br.close();
 				String[] input_array = str_data.split(" ");
 				MergeSort(input_array, 0, input_array.length, max_depth);
-				System.out.println(Arrays.toString(input_array));
 				
 				PrintWriter _output = new PrintWriter(new BufferedWriter(new FileWriter(_output_file_path)));
 				for(var i = 0; i < input_array.length; i++) {
